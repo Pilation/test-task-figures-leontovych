@@ -20,12 +20,17 @@ export default function useBlocksAPI() {
           })
           .catch((error) => {
             setError(error.message);
-
+            setTimeout(() => {
+              setError("");
+            }, 2000);
             setRequestStatus("error");
           });
       })
       .catch((error) => {
         setError(error.message);
+        setTimeout(() => {
+          setError("");
+        }, 2000);
         setRequestStatus("error");
       });
   }, []);
